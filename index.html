@@ -1,846 +1,960 @@
 <!DOCTYPE html>
-<html lang="es"> <!--!    sass --watch sass/style.scss css/style.css    -->
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículum Vitae AJRN</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Currículum Vitae de Juan Pérez, desarrollador web especializado en automatización y desarrollo de soluciones eficientes." />
+  <meta name="author" content="Juan Pérez" />
+  <title>Currículum Vitae - Juan Pérez</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #00327c;
+      --primary-dark: #072f6b;
+      --text-light: #ffffff;
+    }
 
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    .accordion-button h5 {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
 
-    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon.png">
+    .accordion-button small {
+      font-size: 0.85rem;
+    }
+
+    .accordion-body ul {
+      padding-left: 1.2rem;
+    }
+
+    .accordion-item {
+      border-left: 4px solid var(--primary-color);
+      background-color: #f9fbff;
+    }
+
+    /* color barra de progreso*/
+    .barra-skill {
+      background-color: rgb(58, 58, 58) !important;
+    }
+
+    /*Efecto estrellas*/
+    .star {
+      color: gold;
+      font-size: 1.1rem;
+      /* tamaño Aumenta este valor según lo que desees */
+      animation: twinkle 1.8s infinite ease-in-out;
+      text-shadow: 0 0 4px rgba(255, 215, 0, 0.7);
+      display: inline-block;
+      margin-right: -0.4rem;
+      /* Muy juntas */
+    }
+
+    .star:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .star:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.6;
+        transform: scale(1.15);
+      }
+    }
+
+    * {
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #087ccf, #f1f8ff);
+      margin: 0;
+      padding: 0;
+      color: #222;
+      min-height: 100vh;
+    }
+
+    #colorPicker {
+      position: fixed;
+      top: 1rem;
+      right: 2rem;
+      z-index: 9999;
+      border: none;
+      width: 3rem;
+      height: 3rem;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease;
+    }
+
+    #colorPicker:hover,
+    #colorPicker:focus {
+      box-shadow: 0 0 10px var(--primary-color);
+      outline: none;
+    }
+
+    .container-fluid {
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+      padding: 3rem 0;
+    }
+
+    .row.shadow-lg {
+      background: #fff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      min-height: 600px;
+      display: flex;
+      flex-wrap: nowrap;
+      height: calc(100vh - 6rem);
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    aside {
+      background: linear-gradient(160deg, var(--primary-color), var(--primary-dark));
+      color: var(--text-light);
+      padding: 2rem 1.5rem;
+      position: sticky;
+      top: 2rem;
+      height: calc(100vh - 4rem);
+      overflow-y: auto;
+      border-radius: 1rem 0 0 1rem;
+      flex: 0 0 30%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    aside img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    aside h2 {
+      margin-top: 1rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    aside p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    aside hr {
+      border-color: rgba(255 255 255 / 0.3);
+      margin: 1.5rem 0;
+    }
+
+    aside h5 {
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    aside .list-unstyled li {
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 1.1rem;
+      user-select: none;
+      margin-left: 0.5rem;
+      letter-spacing: 2px;
+    }
+
+    section.col-md-8 {
+      padding: 3rem 3rem 3rem 2rem;
+      overflow-y: auto;
+      flex: 1 1 auto;
+      height: calc(100vh - 6rem);
+    }
+
+    .nav-pills {
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .nav-pills .nav-link {
+      color: var(--primary-color);
+      font-weight: 600;
+      border-radius: 1.5rem;
+      padding: 0.5rem 1.25rem;
+      transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+
+    .nav-pills .nav-link.active {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      box-shadow: 0 4px 10px rgba(13, 110, 253, 0.4);
+    }
+
+    .tab-pane {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      transform: translateY(20px);
+    }
+
+    .tab-pane.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .proyecto-box {
+      background-color: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .proyecto-box:hover,
+    .proyecto-box:focus-within {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      outline: none;
+    }
+
+    .proyecto-img {
+      max-width: 100%;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .proyecto-img:hover,
+    .proyecto-img:focus {
+      transform: scale(1.05);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: var(--primary-dark);
+      box-shadow: 0 0 12px var(--primary-dark);
+      outline: none;
+      text-decoration: none;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+      outline: 3px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 767px) {
+      .row.shadow-lg {
+        flex-direction: column;
+        height: auto;
+      }
+
+      aside {
+        position: relative;
+        top: 0;
+        height: auto;
+        border-radius: 1rem 1rem 0 0;
+        overflow-y: visible;
+        flex: none;
+      }
+
+      section.col-md-8 {
+        height: auto;
+        overflow-y: visible;
+      }
+    }
+
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+
+      /* Mostrar todas las secciones siempre */
+      .tab-pane {
+        display: block !important;
+        opacity: 1 !important;
+        transform: none !important;
+        page-break-inside: avoid;
+      }
+
+      /* Ocultar menú de pestañas y botón imprimir */
+      #cvTabs,
+      #btnPrint,
+      #colorPicker {
+        display: none !important;
+      }
+
+      aside {
+        position: static !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+
+      section.col-md-8 {
+        height: auto !important;
+      }
+
+
+
+      .accordion-collapse {
+        display: block !important;
+        height: auto !important;
+        visibility: visible !important;
+      }
+
+      .accordion-button {
+        box-shadow: none !important;
+      }
+
+      .accordion-button::after {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
 
-<body class="container-fluid">
-    <div class="dosColumnas container"> <!-- Las dos columnas principales -->
+<body>
+  <input type="color" id="colorPicker" title="Selecciona un color principal" value="#0d6efd"
+    aria-label="Selecciona color principal">
 
-        <div class="izq container col-4" id="colorOscuro">
-            <!-- columna izquierda nav, brand, contacto, about // skills hard and soft -- idiomas -->
-            <nav class="navbar ">
-                <div class="container">
-                    <a class="navbar-brand" href="#">
-                        <img src="./img/perfil.png" alt="imagen Gustavo">
-                        <!--! agregué un punto a la ruta para que lo tome github-->
-                    </a>
-                </div>
-            </nav>
+  <div class="container-fluid">
+    <div class="row shadow-lg rounded-4 overflow-hidden bg-white" role="main">
 
-            <div class="contact">
-                <div class="contIndividual">
-                    <h5>
-                        <i class="bi bi-whatsapp" id="whatsappButton"></i>
-                        <span class="textContact">
-                            <a id="whaText" href="https://api.whatsapp.com/send?phone=593993842259"
-                                target="_blank">WhatsApp</a>
-                        </span>
-                    </h5>
-                </div>
+      <!-- Columna izquierda -->
+      <aside class="col-md-4" aria-label="Información personal y contacto">
+        <div class="text-center mb-4">
+          <img src="img/perfil.png" alt="Foto de perfil de Juan Pérez" class="img-fluid rounded-circle mb-3"
+            loading="lazy" />
+          <h2 tabindex="0">Andres Jefferson Ruilova Narvaez</h2>
+          <p class="small">Web & Desktop Applications</p>
+        </div>
+        <hr />
+        <section aria-labelledby="contacto-label">
+          <h5 id="contacto-label"><i class="bi bi-person-lines-fill"></i> Contacto</h5>
+          <ul class="list-unstyled small">
+            <li><i class="bi bi-envelope"></i> <a href="mailto:andres_ruilova@hotmail.com"
+                class="text-white text-decoration-none">andres_ruilova@hotmail.com</a></li>
+            <li><i class="bi bi-whatsapp"></i> <a href="https://wa.me/593993842259" target="_blank"
+                class="text-white text-decoration-none">+593993842259</a></li>
+            <li><i class="bi bi-linkedin"></i> <a href="https://linkedin.com/in/andres_ruilova" target="_blank"
+                class="text-white text-decoration-none">linkedin.com/in/andres_ruilova</a></li>
+            <li><i class="bi bi-globe"></i> <a href="https://codevisionec.blogspot.com/" target="_blank"
+                class="text-white text-decoration-none">https://codevisionec.blogspot.com/</a></li>
+          </ul>
+        </section>
+        <hr />
+        <section aria-labelledby="habilidades-label">
+          <h5 id="habilidades-label"><i class="bi bi-tools"></i> Habilidades</h5>
+          <ul class="list-unstyled small mb-3">
+            <li tabindex="0">HTML, CSS, JavaScript <span class="stars">★★★★★</span></li>
+            <li tabindex="0">Python, Flask <span class="stars">★★★★☆</span></li>
+          </ul>
 
-                <div class="contIndividual">
-                    <h5>
-                        <i class="bi bi-envelope-fill" id="sobre"></i>
-                        <span class="textContact">
-                            <a id="sobreText" href="mailto:andres_ruilova@hotmail.com" target="_blank">E-mail</a>
-                        </span>
-                    </h5>
-                </div>
+          <!-- Barras de progreso -->
+          <div class="mb-3">
+            <label class="form-label small">React & Angular</label>
+            <div class="progress">
+              <div class="progress-bar barra-skill" style="width: 70%;" title="70%"></div>
 
-                <div class="contIndividual">
-                    <h5>
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <span class="textContact">
-                            <a id="mapText" href="https://maps.app.goo.gl/UCDu7ppKCmZxaxKc9" target="_blank">Quito -
-                                Ecuador</a>
-                        </span>
-                    </h5>
-                </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small">Django & Flask</label>
+            <div class="progress">
+              <div class="progress-bar barra-skill" style="width: 70%;" title="70%"></div>
 
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small">Java</label>
+            <div class="progress">
+              <div class="progress-bar barra-skill" style="width: 70%;" title="70%"></div>
 
-                <div class="contIndividual">
-                    <h5>
-                        <i class="bi bi-linkedin"></i>
-                        <span class="textContact">
-                            <a id="linkText" href="https://ec.linkedin.com/in/andres-jefferson-ruilova-narvaez"
-                                target="_blank">LinkedIn</a>
-                        </span>
-                    </h5>
-                </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small">CSS & SASS</label>
+            <div class="progress">
+              <div class="progress-bar barra-skill" style="width: 70%;" title="70%"></div>
 
-                <div class="contIndividual">
-                    <h5>
-                        <i class="bi bi-github"></i>
-                        <span class="textContact">
-                            <a id="gitText" href="https://github.com/dressound">GitHub</a>
-                        </span>
-                    </h5>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small">Node.js & Express</label>
+            <div class="progress">
+              <div class="progress-bar barra-skill" style="width: 70%;" title="70%"></div>
+
+            </div>
+          </div>
+
+          <!-- Etiquetas con otras herramientas -->
+          <div aria-label="Otras herramientas" class="mb-3">
+            <span class="badge bg-light text-dark me-1">Git</span>
+            <span class="badge bg-light text-dark me-1">Bootstrap</span>
+            <span class="badge bg-light text-dark me-1">Docker</span>
+            <span class="badge bg-light text-dark me-1">PostgreSQL</span>
+          </div>
+        </section>
+        <hr />
+        <section aria-labelledby="idiomas-label">
+          <h5 id="idiomas-label"><i class="bi bi-translate"></i> Idiomas</h5>
+          <ul class="list-unstyled small">
+            <li>Español <span class="star">★</span><span class="star">★</span><span class="star">★<span
+                  class="star">☆</span></li>
+            <li>Inglés <span class="stars" aria-label="Avanzado">★★★★☆</span></li>
+            <li>Francés <span class="stars" aria-label="Intermedio">★★★☆☆</span></li>
+          </ul>
+        </section>
+        <hr />
+        <section aria-labelledby="conocimientos-label">
+          <h5 id="conocimientos-label"><i class="bi bi-lightbulb"></i> Conocimientos</h5>
+          <ul class="list-unstyled small">
+            <li>Principios SOLID <span class="badge bg-light text-dark ms-1">✔️</span></li>
+            <li>Patrones de Diseño <span class="badge bg-light text-dark ms-1">✔️</span></li>
+            <li>RESTful APIs <span class="badge bg-light text-dark ms-1">✔️</span></li>
+            <li>Metodologías Ágiles <span class="badge bg-light text-dark ms-1">✔️</span></li>
+          </ul>
+        </section>
+      </aside>
+
+      <!-- Columna derecha -->
+      <section class="col-md-8 p-5">
+        <!-- Botón imprimir -->
+        <button id="btnPrint" class="btn btn-outline-primary mb-3" aria-label="Imprimir currículum completo">Imprimir
+          CV</button>
+
+        <nav role="tablist" aria-label="Secciones del currículum" class="nav nav-pills mb-4 flex-wrap gap-2"
+          id="cvTabs">
+          <button class="nav-link active" data-tab="perfil" role="tab" aria-selected="true">Perfil</button>
+          <button class="nav-link" data-tab="experiencia" role="tab" aria-selected="false">Experiencia</button>
+          <button class="nav-link" data-tab="educacion" role="tab" aria-selected="false">Educación</button>
+          <button class="nav-link" data-tab="certificaciones" role="tab" aria-selected="false">Certificaciones</button>
+          <button class="nav-link" data-tab="proyectos" role="tab" aria-selected="false">Proyectos</button>
+        </nav>
+
+        <div id="perfil" class="tab-pane active" tabindex="0">
+          <h3>Perfil Profesional</h3>
+          <p>Soy desarrollador full stack con sólida experiencia en el sector TI, especializado en soluciones tanto
+            front-end como back-end. A lo
+            largo de mi trayectoria he demostrado estabilidad laboral, capacidad de adaptación a entornos cambiantes y
+            una fuerte orientación al
+            trabajo en equipo. Me destaco por una comunicación clara y efectiva, así como por mi compromiso con el
+            aprendizaje continuo y la mejora
+            constante. Mi enfoque se basa en aportar valor real a cada proyecto, ofreciendo soluciones eficientes,
+            mantenibles y orientadas a resultados.</p>
+        </div>
+
+        <div id="experiencia" class="tab-pane" tabindex="0">
+          <div class="accordion" id="expAccordion">
+
+            <div class="accordion-item shadow-sm mb-3 rounded">
+              <h2 class="accordion-header" id="headingIESS">
+                <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseIESS" aria-expanded="false" aria-controls="collapseIESS">
+                  <div>
+                    <h5 class="mb-0 text-primary fw-bold">Hospital del IESS Quito Sur</h5>
+                    <small class="text-muted">
+                      <i class="bi bi-calendar3"></i> Abril 2023 – Presente<br>
+                      <i class="bi bi-hospital"></i> Servicio de Centro Quirurgico y Hospital del Dia
+                    </small>
+                  </div>
+                </button>
+              </h2>
+              <div id="collapseIESS" class="accordion-collapse collapse" aria-labelledby="headingIESS"
+                data-bs-parent="#expAccordion">
+                <div class="accordion-body">
+                  <h6 class="text-primary fw-semibold">Como responsable de la Programación Quirúrgica y Gestión de
+                    Datos
+                  </h6>
+                  <ul>
+                    <li>Coordiné de manera integral la programación del centro quirúrgico, optimizando los flujos de
+                      pacientes en espera de cirugía según la disponibilidad de recursos humanos y materiales.</li>
+                    <li>Realicé la administración y actualización de la base de datos de pacientes quirúrgicos,
+                      garantizando integridad, trazabilidad y consistencia de la información.</li>
+                    <li>Realicé la elaboración y análisis de matrices estadísticas, consolidación de indicadores clave
+                      de desempeño (KPI) del área quirúrgica y generación de reportes técnicos.</li>
+                    <li>Supervisé el llenado de documentación quirúrgica (partes operatorios), verificando
+                      cumplimiento de requisitos legales y administrativos (firmas, sellos, tiempos quirúrgicos)</li>
+                    <li>Cargé, validé y realicé la estructuración de datos quirúrgicos para su visualización en
+                      dashboards dinámicos mediante Power BI, orientados a la toma de decisiones gerenciales.</li>
+                    <li>Aseguré el cumplimiento de los tiempos quirúrgicos en la base de datos, como insumo para
+                      auditoría interna y mejora continua de procesos asistenciales.</li>
+                  </ul>
+                  <h6 class="text-primary fw-semibold">Como responsable de Compras Públicas
+                  </h6>
+                  <ul>
+                    <li>Realicé la elaboración , validación y gestión de los requerimientos técnicos y
+                      especificaciones para la adquisición de insumos y materiales médicos, alineados a las
+                      necesidades reales del centro quirúrgico.</li>
+                    <li>Coordiné de manera directa con el área de compras y finanzas para consolidar las demandas,
+                      garantizar la correcta priorización y evitar faltantes que afecten la programación quirúrgica.
+                    </li>
+                    <li>Realicé la elaboración y análisis de matrices estadísticas, consolidación de indicadores clave
+                      de desempeño (KPI) del área quirúrgica y generación de reportes técnicos.</li>
+                    <li>Realicé la supervisión del cumplimiento de los procedimientos establecidos por la Ley de
+                      Contrataciones del Estado desde la perspectiva del área usuaria, asegurando la calidad y
+                      pertinencia de las solicitudes.</li>
+                    <li>Realicé la interlocución con proveedores y unidades de adquisiciones para resolver consultas
+                      técnicas, facilitando la correcta evaluación de ofertas y agilizando los tiempos de compra.</li>
+                  </ul>
                 </div>
-                <div class="contIndividual">
-                    <h5>
-                        <span class="textContact">
-                            <a id="gitText" href="/Sitio-web-responsivo-main/index.html">Mi_Web.com</a>
-                        </span>
-                    </h5>
-                </div>
+              </div>
             </div>
 
-            <hr id="hr1"> <!--? ///////////////////// about ////////////////////// -->
-
-            <section class="about">
-                <h3>Acerca de Mí</h3>
-
-                <p>
-                    Soy desarrollador front end Jr, quiero migrar al sector IT. Respecto a mi carrera actual y mi vasta
-                    trayectoria demuestra claramente habilidades como: Estabilidad, Adaptabilidad a distintos entornos,
-                    excelente actitud para el trabajo en equipo, comunicación asertiva, soy capaz de adaptarme a
-                    cualquier
-                    circunstancia y dar lo mejor de mi en cualquier proyecto, disfruto de verdad el aprendizaje
-                    continuo.
-                </p>
-            </section>
-            <hr id="hr2">
-            <section class="idiomas">
-                <h3>Idiomas</h3>
-                <p>Inglés</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 55%"></div>
-                    </div>
+            <div class="accordion-item shadow-sm mb-3 rounded">
+              <h2 class="accordion-header" id="headingALIANZA">
+                <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseALIANZA" aria-expanded="false" aria-controls="collapseALIANZA">
+                  <div>
+                    <h5 class="mb-0 text-primary fw-bold">Hospital Alianza</h5>
+                    <small class="text-muted">
+                      <i class="bi bi-calendar3"></i>07 de Febrero 2022 - 20 de Marzo 2023
+                      <br>
+                      <i class="bi bi-clipboard-pulse"></i> GINSBERG - Hospital Alianza
+                    </small>
+                  </div>
+                </button>
+              </h2>
+              <div id="collapseALIANZA" class="accordion-collapse collapse" aria-labelledby="headingALIANZA"
+                data-bs-parent="#expAccordion">
+                <div class="accordion-body">
+                  <h6 class="text-primary fw-semibold">Como responsable del area de TI estuve a cargo de:</h6>
+                  <ul>
+                    <li>Ejecuté tareas de mantenimiento preventivo y correctivo de equipos de cómputo, asegurando la
+                      operatividad continua de los sistemas informáticos y reduciendo el tiempo de inactividad en la
+                      unidad.</li>
+                    <li>Gestioné procesos administrativos y técnicos para el descargo, adquisición y reposición de
+                      repuestos, coordinando con áreas logísticas y proveedoras para garantizar la disponibilidad
+                      oportuna de recursos tecnológicos.</li>
+                    <li>Diagnostiqué, gestioné y resolví incidentes técnicos relacionados con hardware, software,
+                      redes LAN/WAN y conectividad general, asegurando la continuidad operativa de los servicios
+                      institucionales.</li>
+                    <li>Administré, configuré y monitoreé servidores físicos y virtuales, optimizando su rendimiento y
+                      disponibilidad mediante tareas de mantenimiento, actualización y respaldo periódico.</li>
+                    <li>Gestioné usuarios y políticas de acceso en Active Directory, incluyendo la configuración de
+                      perfiles, permisos, grupos de seguridad y administración de carpetas compartidas.</li>
+                    <li>Administré cuentas de usuario en Microsoft Office 365, gestionando licencias, respaldos de
+                      correo electrónico, almacenamiento en la nube (OneDrive/SharePoint) y soporte funcional.</li>
+                    <li>Implementé buenas prácticas de seguridad informática y respaldo de datos, contribuyendo a la
+                      protección de la infraestructura tecnológica institucional.</li>
+                  </ul>
                 </div>
-            </section>
-            <hr id="hr3">
-            <section class="skills">
-                <h3>Skills</h3>
-                <p>HTML</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
-                    </div>
+              </div>
+            </div>
+
+            <div class="accordion-item shadow-sm mb-3 rounded">
+              <h2 class="accordion-header" id="headingHGSQ">
+                <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseHGSQ" aria-expanded="false" aria-controls="collapseHGSQ">
+                  <div>
+                    <h5 class="mb-0 text-primary fw-bold">Hospital General del Sur de Quito IESS(Covid19)</h5>
+                    <small class="text-muted">
+                      <i class="bi bi-calendar3"></i> Agosto de 2020 - Marzo de 2022
+                      <br>
+                      <i class="bi bi-clipboard-pulse"></i> Atencion al Paciente - Verificacion de datos
+                    </small>
+                  </div>
+                </button>
+              </h2>
+              <div id="collapseHGSQ" class="accordion-collapse collapse" aria-labelledby="headingHGSQ"
+                data-bs-parent="#expAccordion">
+                <div class="accordion-body">
+                  <h6 class="text-primary fw-semibold">Como responsable del proceso estuve a cargo de:</h6>
+                  <ul>
+                    <li>Realicé el registro e ingreso de pacientes en los distintos servicios: emergencia, consulta
+                      externa, hospitalización, hospital de día y triaje, asegurando la correcta clasificación y
+                      trazabilidad de cada caso.</li>
+                    <li>Califiqué el derecho de atención según normativas institucionales y clasifiqué el tipo de
+                      paciente (SIS, ESSALUD, privado, referencia, entre otros), garantizando un flujo administrativo
+                      adecuado.</li>
+                    <li>Gestioné la apertura y creación de historias clínicas físicas y digitales, cumpliendo los
+                      requisitos de identificación y codificación establecidos.</li>
+                    <li>Registré a los pacientes en el sistema de triaje, coordinando su atención según niveles de
+                      prioridad y protocolos clínicos.</li>
+                    <li>Tramité el ingreso formal a hospitalización de pacientes derivados por consulta externa,
+                      emergencia o cirugía, realizando la validación previa de documentación.</li>
+                    <li>Efectué la legalización, archivo y control de documentación médica-administrativa, asegurando
+                      la custodia y validez jurídica de los expedientes clínicos.</li>
+                  </ul>
                 </div>
+              </div>
+            </div>
 
-                <p>CSS</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 85%"></div>
-                    </div>
+            <div class="accordion-item shadow-sm mb-3 rounded">
+              <h2 class="accordion-header" id="headingCORPSERVIN">
+                <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseCORPSERVIN" aria-expanded="false" aria-controls="collapseCORPSERVIN">
+                  <div>
+                    <h5 class="mb-0 text-primary fw-bold">CORPSERVIN S.A</h5>
+                    <small class="text-muted">
+                      <i class="bi bi-calendar3"></i> agosto de 2015 - enero de 2022<br>
+                      <i class="bi bi-clipboard-pulse"></i> Técnico de Soporte y Desarrollo de Soluciones TI
+
+                    </small>
+                  </div>
+                </button>
+              </h2>
+              <div id="collapseCORPSERVIN" class="accordion-collapse collapse" aria-labelledby="headingCORPSERVIN"
+                data-bs-parent="#expAccordion">
+                <div class="accordion-body">
+                  <h6 class="text-primary fw-semibold">Como responsable del área estuve a cargo de:</h6>
+                  <ul>
+                    <li>Realicé mantenimiento correctivo y preventivo de los equipos informáticos, asegurando la
+                      continuidad operativa
+                      del parque tecnológico de la empresa.</li>
+                    <li>Diagnostiqué y resolví incidencias relacionadas con hardware, software y redes LAN/WAN,
+                      minimizando tiempos de
+                      inactividad y garantizando niveles óptimos de disponibilidad.
+                    </li>
+                    <li>Brindé soporte técnico de primer y segundo nivel (Help Desk), tanto presencial como remoto, a
+                      usuarios
+                      internos, garantizando atención eficiente mediante sistemas de ticketing.
+                    </li>
+                    <li>Administré cableado estructurado, configuración de routers, switches y puntos de acceso,
+                      fortaleciendo la
+                      infraestructura de red de la organización.
+                    </li>
+                    <li>Desarrollé y mantuve aplicaciones internas personalizadas para automatización de procesos
+                      administrativos y
+                      operativos, utilizando base de datos y lenguajes de programación</li>
+                    <li>Implementé mejoras funcionales y correctivas en los sistemas existentes, aplicando
+                      metodologías ágiles y
+                      control de versiones con herramientas como Git.</li>
+                    <li>Gestioné respaldos de información crítica y configuraciones básicas de servidores y servicios
+                      de red,
+                      contribuyendo a la seguridad y disponibilidad de los datos.</li>
+                    <li>Documenté procedimientos técnicos, planes de mantenimiento y manuales de usuario, facilitando
+                      la capacitación
+                      del personal y la estandarización de procesos TI.</li>
+                    <li>Administré cuentas, permisos y respaldos de usuarios corporativos a través de Active Directory
+                      y Microsoft 365
+                    </li>
+                  </ul>
                 </div>
-
-                <p>PHP</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
-                    </div>
-                </div>
-
-
-                <p>JavaScript</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 50%"></div>
-                    </div>
-                </div>
-
-                <p>Bootstrap</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 70%"></div>
-                    </div>
-                </div>
-
-                <p>Sass</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 65%"></div>
-                    </div>
-                </div>
-
-                <p>Git / GitHub</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
-                    </div>
-                </div>
-
-                <br><br>
-                <h3>Conocimientos</h3>
-
-                <p>Adobe Illustrator</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 40%"></div>
-                    </div>
-                </div>
-
-                <p>Adobe Photoshop</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
-                    </div>
-                </div>
-
-                <p>Adobe Indesign</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 70%"></div>
-                    </div>
-                </div>
-
-                <p>Fl Studio</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 95%"></div>
-                    </div>
-                </div>
-
-                <p>Canva</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
-                    </div>
-                </div>
-
-                <p>Figma</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 85%"></div>
-                    </div>
-                </div>
-
-                <br><br>
-                <h3>Aprendiendo</h3>
-
-                <p>NodeJs</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 35%"></div>
-                    </div>
-                </div>
-
-                <p>Power BI</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 35%"></div>
-                    </div>
-                </div>
-
-                <p>React</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 25%"></div>
-                    </div>
-                </div>
-
-                <p>Python</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 45%"></div>
-                    </div>
-                </div>
-
-                <br><br>
-                <h3>Habilidades</h3>
-
-                <p>Microsoft Word</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%"></div>
-                    </div>
-                </div>
-
-                <p>Microsoft Excel</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
-                    </div>
-                </div>
-
-                <p>Microsoft Access</p>
-                <div class="progBar">
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 65%"></div>
-                    </div>
-                </div>
-
-            </section>
-
-            <hr id="hr4">
-            <figure class="text-end">
-                <blockquote class="blockquote">
-                    <p>No hay viento favorable para el que no sabe donde va.</p>
-                </blockquote>
-                <figcaption class="blockquote-footer">
-                    Séneca
-                </figcaption>
-            </figure>
-            <hr id="hr5">
+              </div>
+            </div> <!-- Cierre de #expAccordion -->
+          </div>
         </div>
-        <!--? ////////////////////////////////////////////// columna derecha -------------------------------------------------->
-        <div class="der container col-8" id="colorClaro">
-            <!-- col derecha, experiencia laboral desplegable, estudios,  -->
-            <header id="colorHeader">
-                <div class="nombre">
-                    <h1>Andres Jefferson Ruilova Narvaez</h1>
-                    <h5>Frontend web Developer | UX/UI Designer</h5>
+
+        <div id="educacion" class="tab-pane" tabindex="0">
+          <h3>Primaria</h3>
+          <p>Escuela Abdon Calderon Muñoz</p>
+          <h3>Secundaria</h3>
+          <p>Colegio Nacional "Emilio Uzcategui"</p>
+          <h3>Tercer Nivel</h3>
+          <h5>Institulo Tecnologico Universitario Vida Nueva</h5>
+          <p>Desarrollo de Software</p>
+        </div>
+
+        <div id="certificaciones" class="tab-pane" tabindex="0">
+          <h3>Certificaciones</h3>
+
+          <div class="accordion" id="certAccordion">
+
+            <!-- Grupo 1: Desarrollo Web -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingWeb">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseWeb" aria-expanded="false" aria-controls="collapseWeb">
+                  Desarrollo Web
+                </button>
+              </h2>
+              <div id="collapseWeb" class="accordion-collapse collapse" aria-labelledby="headingWeb"
+                data-bs-parent="#certAccordion">
+                <div class="accordion-body">
+                  <ul>
+                    <li>Certificación en HTML5 y CSS3 - Plataforma Online (2020)</li>
+                    <li>JavaScript Moderno - Academia XYZ (2021)</li>
+                    <li>Bootstrap Avanzado - Cursos Web (2022)</li>
+                  </ul>
                 </div>
-                <div class="btns">
-
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider" onclick="toggleTheme()"></span>
-                    </label>
-
-                    <div class="dropdown" style="float:right;">
-                        <button class="dropbtn"><i class="bi bi-palette-fill"></i></button>
-                        <div class="dropdown-content">
-                            <i class="bi bi-circle-fill" id="n1"></i>
-                            <i class="bi bi-circle-fill" id="n2"></i>
-                            <i class="bi bi-circle-fill" id="n3"></i>
-                            <i class="bi bi-circle-fill" id="n4"></i>
-                            <i class="bi bi-circle-fill" id="n5"></i>
-                        </div>
-                    </div>
+              </div>
+            </div>
+            <!-- Grupo 3: Gestión de Proyectos -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingProyectos">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseProyectos" aria-expanded="false" aria-controls="collapseProyectos">
+                  Data Base
+                </button>
+              </h2>
+              <div id="collapseProyectos" class="accordion-collapse collapse" aria-labelledby="headingProyectos"
+                data-bs-parent="#certAccordion">
+                <div class="accordion-body">
+                  <ul>
+                    <li>VISUALIZADOR DE BIG DATA</li>
+                    <li>VISUALIZADOR DE DATOS</li>
+                    <li>ARQUITECTO DE AMBIENTES VIRTUALES DE APRENDIZAJE</li>
+                    <li>ADMINISTRADOR DE PROYECTOS PARA AMBIENTES VIRTUALES DE APRENDIZAJE</li>
+                    <li> GESTIONA TU PORTAFOLIO COMO DESARROLLADOR</li>
+                    <li> CURSO BASICO DE PREVENCION Y CONTROL DE INFECCIONES MULTITERRESTRES EN EL HOSPITAL</li>
+                    <li>CERTIFICADO EDUCACION FINANCIERA</li>
+                    <li>DESARROLLADOR DE CONTENIDOS DE APRENDIZAJE CERTIFICADO PLATZI DISEÑO GRAFICO</li>
+                  </ul>
                 </div>
-            </header>
-
-            <!--! ---------------------------------------------- experiencia laboral -------------------------------------------------->
-
-            <div class="accordion" id="experienciaLaboral">
-                <!-- accordionPanelsStayOpen  https://www.youtube.com/watch?v=hGlKDPMhGG8&list=PLnunbwZjHqMO-JII_HBf5TAzdzaBJP34w&index=26 -->
-                <h3>Experiencia laboral</h3>
-                <!--! ---------------------------------------------- experiencia IESS 2023 -------------------------------------------------->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
-                            aria-controls="panelsStayOpen-collapseOne">
-                            <h5>Hospital del IESS Quito Sur</h5>
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
-                        aria-labelledby="panelsStayOpen-headingOne">
-                        <div class="accordion-body">
-                            <h5> Servicio de Centro Quirurgico y Hospital del Dia</h5>
-                            <h6>03 de Abril 2023 - presente</h6>
-                            <p class="workexp">
-                                Responsable de la Programación Quirúrgica, Gestión de Datos y compras publicas <br>
-                                <br>
-                                <br>
-                                Como responsable de la Programación Quirúrgica y Gestión de Datos
-                            <ul>
-                                <li>Coordiné de manera integral la programación del centro quirúrgico, optimizando los
-                                    flujos de pacientes en espera de cirugía según la disponibilidad de recursos humanos
-                                    y materiales. </li>
-                                <li>Realicé la administración y actualización de la base de datos de pacientes
-                                    quirúrgicos, garantizando integridad, trazabilidad y consistencia de la información.
-                                </li>
-                                <li>Realicé la elaboración y análisis de matrices estadísticas, consolidación de
-                                    indicadores clave de desempeño (KPI) del área quirúrgica y generación de reportes
-                                    técnicos.</li>
-                                <li>Supervisé el llenado de documentación quirúrgica (partes operatorios), verificando
-                                    cumplimiento de requisitos legales y administrativos (firmas, sellos, tiempos
-                                    quirúrgicos)</li>
-                                <li>Cargé, validé y realicé la estructuración de datos quirúrgicos para su visualización
-                                    en dashboards dinámicos mediante Power BI, orientados a la toma de decisiones
-                                    gerenciales.</li>
-                                <li>Aseguré el cumplimiento de los tiempos quirúrgicos en la base de datos, como insumo
-                                    para auditoría interna y mejora continua de procesos asistenciales.</li>
-                            </ul>
-                            <br>
-                            Como responsable de Compras Públicas
-                            <ul>
-                                <li>Realicé la elaboración , validación y gestión de los requerimientos técnicos y
-                                    especificaciones para la adquisición de insumos y materiales médicos, alineados a
-                                    las necesidades reales del centro quirúrgico</li>
-                                <li>Coordiné de manera directa con el área de compras y finanzas para consolidar las
-                                    demandas, garantizar la correcta priorización y evitar faltantes que afecten la
-                                    programación quirúrgica.</li>
-                                <li>Realicé la supervisión del cumplimiento de los procedimientos establecidos por la
-                                    Ley de Contrataciones del Estado desde la perspectiva del área usuaria, asegurando
-                                    la calidad y pertinencia de las solicitudes.</li>
-                                <li>Realicé la interlocución con proveedores y unidades de adquisiciones para resolver
-                                    consultas técnicas, facilitando la correcta evaluación de ofertas y agilizando los
-                                    tiempos de compra.</li>
-                            </ul>
-                            </p>
-                        </div>
-                    </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingProyectos">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseProyectos" aria-expanded="false" aria-controls="collapseProyectos">
+                  Ministerio de Salud Publica
+                </button>
+              </h2>
+              <div id="collapseProyectos" class="accordion-collapse collapse" aria-labelledby="headingProyectos"
+                data-bs-parent="#certAccordion">
+                <div class="accordion-body">
+                  <ul>
+                    <li>GESTIÓN INTERNA DE LOS RESIDUOS Y DESECHOS GENERADOS EN ESTABLECIMIENTOS DE SALUD FUNDAMENTOS
+                      CONTRATACION PUBLICA</li>
+                    <li>HIGIENE DE LAS MANOS</li>
+                    <li>OPERADOR DEL SISTEMA NACIONAL DE COMPRAS PÚBLICAS - CONTRATACIÓN PÚBLICA</li>
+                    <li>INSTITUCION SEGURA LIBRE DE VIOLENCIA CONTRA LAS MUJERES</li>
+                    <li>CURSO DE LIMPIEZA Y DESINFECCIÓN AMBIENTAL EN LOS ESTABLECIMIENTOS DE SALUD</li>
+                  </ul>
                 </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                            aria-controls="panelsStayOpen-collapseTwo">
-                            <h5>Hospital Alianza</h5>
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                        aria-labelledby="panelsStayOpen-headingTwo">
-                        <div class="accordion-body">
-                            <h5>GINSBERG - HOSPITAL ALIANZA</h5>
-                            <h6>07 de Febrero 2022 - 20 de Marzo 2023</h6>
-                            <p class="workexp">
-                                <br>
-                                Responsable de los datos, estadisticas, manejo de matrices, llenado de documentacion.
-                                <br>
-                                <br>
-                                Como responsable del area de sistemas estuve a cargo de:
-                            <ul>
-                                <li>Ejecuté tareas de mantenimiento preventivo y correctivo de equipos de cómputo,
-                                    asegurando la operatividad continua de los sistemas informáticos y reduciendo el
-                                    tiempo de inactividad en la unidad.</li>
-                                <li>Gestioné procesos administrativos y técnicos para el descargo, adquisición y
-                                    reposición de repuestos, coordinando con áreas logísticas y proveedoras para
-                                    garantizar la disponibilidad oportuna de recursos tecnológicos.</li>
-                                <li>Diagnostiqué, gestioné y resolví incidentes técnicos relacionados con hardware,
-                                    software, redes LAN/WAN y conectividad general, asegurando la continuidad operativa
-                                    de los servicios institucionales.</li>
-                                <li>Administré, configuré y monitoreé servidores físicos y virtuales, optimizando su
-                                    rendimiento y disponibilidad mediante tareas de mantenimiento, actualización y
-                                    respaldo periódico.</li>
-                                <li>Gestioné usuarios y políticas de acceso en Active Directory, incluyendo la
-                                    configuración de perfiles, permisos, grupos de seguridad y administración de
-                                    carpetas compartidas.</li>
-                                <li>Administré cuentas de usuario en Microsoft Office 365, gestionando licencias,
-                                    respaldos de correo electrónico, almacenamiento en la nube (OneDrive/SharePoint) y
-                                    soporte funcional.</li>
-                                <li>Implementé buenas prácticas de seguridad informática y respaldo de datos,
-                                    contribuyendo a la protección de la infraestructura tecnológica institucional.</li>
-                            </ul>
-                        </div>
-                    </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingProyectos">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseProyectos" aria-expanded="false" aria-controls="collapseProyectos">
+                  Universidad Tecnica Particular de Loja
+                </button>
+              </h2>
+              <div id="collapseProyectos" class="accordion-collapse collapse" aria-labelledby="headingProyectos"
+                data-bs-parent="#certAccordion">
+                <div class="accordion-body">
+                  <ul>
+                    <li>RECLUTAMIENTO, SELECCIÓN E INDUCCIÓN</li>
+                    <li>DE PERSONAL.</li>
+                    <li>CULTURA FINANCIERA</li>
+                    <li>FUNDAMENTOS DE ADMINISTRACIÓN</li>
+                    <li>COMPUTACION BASICA</li>
+                    <li>ADMINISTRACIÓN DE RECURSOS HUMANOS</li>
+                  </ul>
                 </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-heading2">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapse2" aria-expanded="false"
-                            aria-controls="panelsStayOpen-collapse2">
-                            <h5>Hospital del IESS Quito Sur (COVID-19)</h5>
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapse2" class="accordion-collapse collapse"
-                        aria-labelledby="panelsStayOpen-heading2">
-                        <div class="accordion-body">
-                            <h5>Administrativo en admisiones - Emergencia - Consulta Externa (PANDEMIA COVID-19)</h5>
-                            <h6>7 Agosto de 2020 - 31 de marzo de 2022</h6>
-                            <p>
-                                Atencion al paciente en el area de carpas, consulta externa y emergencia, asi como
-                                llenado de matrices, verificacion cruzada de datos, planificacion y administracion de
-                                documentacion:
-                            <ul>
-                                <li>Realicé el registro e ingreso de pacientes en los distintos servicios: emergencia,
-                                    consulta externa, hospitalización, hospital de día y triaje, asegurando la correcta
-                                    clasificación y trazabilidad de cada caso.</li>
-                                <li>Califiqué el derecho de atención según normativas institucionales y clasifiqué el
-                                    tipo de paciente (SIS, ESSALUD, privado, referencia, entre otros), garantizando un
-                                    flujo administrativo adecuado.</li>
-                                <li>Gestioné la apertura y creación de historias clínicas físicas y digitales,
-                                    cumpliendo los requisitos de identificación y codificación establecidos.</li>
-                                <li>Registré a los pacientes en el sistema de triaje, coordinando su atención según
-                                    niveles de prioridad y protocolos clínicos.</li>
-                                <li>Tramité el ingreso formal a hospitalización de pacientes derivados por consulta
-                                    externa, emergencia o cirugía, realizando la validación previa de documentación.
-                                </li>
-                                <li>Efectué la legalización, archivo y control de documentación médica-administrativa,
-                                    asegurando la custodia y validez jurídica de los expedientes clínicos.</li>
-                                <li>Manejo de Software:
-                                    <ul>
-                                        <li>Sistema de Gestion Quipux</li>
-                                        <li>Sistema AS400</li>
-                                        <li>Microsoft Office 365</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            Era mi responsabilidad todo el proceso logístico, su control físico y carga al sistema
-                            este último punto a través del sistema conocido como <a
-                                href="https://es.wikipedia.org/wiki/AS/400" target="_blank"
-                                rel="noopener noreferrer">AS400</a>.
-                            </p>
-                        </div>
-                    </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingProyectos">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseProyectos" aria-expanded="false" aria-controls="collapseProyectos">
+                  Diplomas
+                </button>
+              </h2>
+              <div id="collapseProyectos" class="accordion-collapse collapse" aria-labelledby="headingProyectos"
+                data-bs-parent="#certAccordion">
+                <div class="accordion-body">
+                  <ul>
+                    <li>TÉCNICO EN SISTEMAS INFORMÁTICOS</li>
+                    <li>TÉCNICO EN INTEGRIDAD WEB</li>
+                    <li>TÉCNICO EN BIG DATA</li>
+                    <li>DESARROLLO DE SITIOS WEB Y APLICACIONES MÓVILES GESTIÓN DE AMBIENTES VIRTUALES DE APRENDIZAJE</li>
+                    <li>DESARROLLO DE ESTRATEGIAS DIGITALES DE APRENDIZAJE</li>
+                    <li>TÉCNICO EN INTELIGENCIA DE NEGOCIOS</li>
+                    <li>TÉCNICO EN COMPUTO EN LA NUBE</li>
+                    <li>TÉCNICO EN INTERNET DE LAS COSAS</li>
+                    <li>TÉCNICO INSTALADOR DE RED DE ACCESO</li>
+                  </ul>
                 </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-heading3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapse3" aria-expanded="false"
-                            aria-controls="panelsStayOpen-collapse3">
-                            <h5>CORPSERVIN S.A</h5>
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapse3" class="accordion-collapse collapse"
-                        aria-labelledby="panelsStayOpen-heading3">
-                        <div class="accordion-body">
-                            <h5>Área de Tecnología e Infraestructura</h5>
-                            <h6>agosto de 2015 - enero de 2022 (6 meses)</h6>
-                            <p>
-                                Técnico de Soporte y Desarrollo de Soluciones TI
-                                <br>
-                                Eran mis tareas:
-                            <ul>
-                                <li>Realicé mantenimiento correctivo y preventivo de los equipos informáticos,
-                                    asegurando la continuidad operativa del parque tecnológico de la empresa.</li>
-                                <li>Diagnostiqué y resolví incidencias relacionadas con hardware, software y redes
-                                    LAN/WAN, minimizando tiempos de inactividad y garantizando niveles óptimos de
-                                    disponibilidad.</li>
-                                <li>Brindé soporte técnico de primer y segundo nivel (Help Desk), tanto presencial como
-                                    remoto, a usuarios internos, garantizando atención eficiente mediante sistemas de
-                                    ticketing.</li>
-                                <li>Administré cableado estructurado, configuración de routers, switches y puntos de
-                                    acceso, fortaleciendo la infraestructura de red de la organización.</li>
-                                <li>Desarrollé y mantuve aplicaciones internas personalizadas para automatización de
-                                    procesos administrativos y operativos, utilizando tecnologías como [inserta aquí:
-                                    Python, JavaScript, PHP, C#, etc.].</li>
-                                <li>Implementé mejoras funcionales y correctivas en los sistemas existentes, aplicando
-                                    metodologías ágiles y control de versiones con herramientas como Git.</li>
-                                <li>Gestioné respaldos de información crítica y configuraciones básicas de servidores y
-                                    servicios de red, contribuyendo a la seguridad y disponibilidad de los datos.</li>
-                                <li>Documenté procedimientos técnicos, planes de mantenimiento y manuales de usuario,
-                                    facilitando la capacitación del personal y la estandarización de procesos TI.</li>
-                                <li>Administré cuentas, permisos y respaldos de usuarios corporativos a través de Active
-                                    Directory y Microsoft 365</li>
-                            </ul>
-
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!--! ------------------------------------------//// educación /// ---------------------------------------------------------- -->
-
-                <div class="accordion" id="educación">
-                    <!-- accordionPanelsStayOpen  https://www.youtube.com/watch?v=hGlKDPMhGG8&list=PLnunbwZjHqMO-JII_HBf5TAzdzaBJP34w&index=26 -->
-                    <h3>Educación</h3>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-heading1">
-                            <!--? para individualizar cada item del acordeón, tuve que hacer cambios en:  id="panelsStayOpen-heading1" + data-bs-target="#panelsStayOpen-collapse1" + aria-controls="panelsStayOpen-collapse1" + id="panelsStayOpen-collapse1" + aria-labelledby="panelsStayOpen-heading1"  -->
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapse1" aria-expanded="false"
-                                aria-controls="panelsStayOpen-collapse1">
-                                <h5>Primaria</h5>
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapse1" class="accordion-collapse collapse"
-                            aria-labelledby="panelsStayOpen-heading1">
-                            <div class="accordion-body">
-                                <h6>Escuela Abdon Calderon Muñoz</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-heading69">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapse69" aria-expanded="false"
-                                aria-controls="panelsStayOpen-collapse69">
-                                <h5>Secundaria</h5>
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapse69" class="accordion-collapse collapse"
-                            aria-labelledby="panelsStayOpen-heading69">
-                            <div class="accordion-body">
-                                <h6>Colegio Nacional "Emilio Uzcategui"</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                                aria-controls="panelsStayOpen-collapseThree">
-
-                                <h5>Tercer Nivel</h5>
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                            aria-labelledby="panelsStayOpen-headingThree">
-                            <div class="accordion-body">
-
-                                <h5>Desarrollo de Software</h5>
-                                <h6>(julio de 2021 - diciembre de2021)</h6>
-                                <p>
-                                    Desarrollo Android <br>
-                                    Desarrollo Web con HTML - CSS - PHP - JavaScript - AJAX <br>
-                                    Bases de Datos y SQL <br>
-                                    Desarrollo Java <br>
-                                    Paradigma Orientado a Objetos <br>
-                                    Análisis y Diseño de Casos de Pruebas <br>
-                                    Testing de Webservices con SOAP UI <br>
-                                    Análisis Funcional <br>
-                                    Testing Automation <br>
-                                    Software Tester QA Management <br>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
-                    <!--! ------------------------------------------//// certificaciones /// ---------------------------------------------------------- -->
+        <div id="proyectos" class="tab-pane" tabindex="0">
+          <h3>Proyectos Destacados</h3>
 
-                    <div class="accordion" id="certificados">
-                        <!-- accordionPanelsStayOpen  https://www.youtube.com/watch?v=hGlKDPMhGG8&list=PLnunbwZjHqMO-JII_HBf5TAzdzaBJP34w&index=26 -->
-                        <h3>Certificaciones</h3>
-                        <!--! ------------------------------------------//// PROGRAMACION /// ---------------------------------------------------------- -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="panelsStayOpen-headingC1">
-                                <!--? para individualizar cada item del acordeón, tuve que hacer cambios en:  id="panelsStayOpen-heading1" + data-bs-target="#panelsStayOpen-collapse1" + aria-controls="panelsStayOpen-collapse1" + id="panelsStayOpen-collapse1" + aria-labelledby="panelsStayOpen-heading1"  -->
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseC1" aria-expanded="false"
-                                    aria-controls="panelsStayOpen-collapsec1">
-                                    <h4>Programación</h4>
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapseC1" class="accordion-collapse collapse"
-                                aria-labelledby="panelsStayOpen-headingC1">
-                                <div class="accordion-body">
-                                    <h5>Cursos</h5>
-                                    <p>
-                                    <ul>
-                                        <li> <a href="https://drive.google.com/file/d/15fEbXj99Br8LPxQ-e-EOsZwgb9hXndTg/view?usp=sharing"
-                                                target="_blank">Certificado MOODLE</a>
-                                        </li>
-                                    </ul>
-                                    </p>
-                                    <hr>
-                                    <h5>UDEMY</h5>
-                                    <p>
-                                    <ul>
-                                        <li><a href="https://sceu-utnba.bitrix24.es/pub/document/30173/9b01522f19189fb44d8a3275fa3fcd87/"
-                                                target="_blank">Programacion Movil con Android, NodeJS, y Base de datos
-                                                SQL</a>
-                                        </li>
-                                    </ul>
-                                    </p>
-                                    <hr>
-                                    <h5>Educación IT</h5>
-                                    <p>
-                                    <ul>
-                                        <li>Análisis y Diseño de Casos de Pruebas</li>
-                                        <li>Git: Desarrollo Colaborativo</li>
-                                        <li>Análisis Funcional</li>
-                                        <li>Introducción al Paradigma de Objetos</li>
-                                        <li>Java para no programadores</li>
-                                        <li>Software Tester QA</li>
-                                        <li>HTML5: Fundamentos Web</li>
-                                        <li>Curso Introducción al lenguaje de Programación</li>
-                                        <li>Seminario De SQL Server</li>
-                                    </ul>
-                                    </p>
-                                    <hr>
-                                    <h5>Platzi</h5>
-                                    <p>
-                                    <ul>
-                                        <li>Curso de Diseño y Creación de Logos</li>
-                                        <li><a href="https://drive.google.com/file/d/1EJpJ6MxL8nsuhDM-RqpG5d-ONwz_IPmh/view?usp=sharing"
-                                                target="_blank">Curso de Diseño Grafico</a>
-                                        </li>
-                                    </ul>
-                                    </p>
-                                    <hr>
-                                    <li><a href="https://drive.google.com/file/d/1pBPN7lyIys5Pv_3j4e-XOvwBcv0mgwdF/view?usp=sharing"
-                                            target="_blank">Computacion Basica "Certificacion online"</a>
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
+          <article class="proyecto-box" tabindex="0" aria-labelledby="proyecto1-titulo" role="region">
+            <img src="Certificado/Visor_Gerencial_HGSQ.gif"
+              alt="Demostración del proyecto 1 mostrando la interfaz principal y funcionalidades"
+              class="proyecto-img" />
+            <h4 id="proyecto1-titulo">Automatización de Reportes</h4>
+            <p>Una aplicación web que automatiza la generación y envío de reportes personalizados para equipos de
+              trabajo, optimizando tiempos y mejorando la precisión.</p>
+            <p><strong>Tecnologías:</strong> Python, Flask, Bootstrap, MySQL</p>
+            <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+          </article>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="panelsStayOpen-headingC2">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseC2" aria-expanded="false"
-                                    aria-controls="panelsStayOpen-collapseC2">
-                                    <h4>Otras Habilidades</h4>
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapseC2" class="accordion-collapse collapse"
-                                aria-labelledby="panelsStayOpen-headingC2">
-                                <div class="accordion-body">
-                                    <h6>Excel de Basico a Nivel Avanzado</h6>
-                                    <p>
-                                    <ul>
-                                        <li>Fórmulas y funciones complejas</li>
-                                        <li>Tablas dinámicas</li>
-                                        <li>Insercion de Gráficos</li>
-                                        <li>Validación de datos</li>
-                                        <li>Protección y seguridad</li>
-                                        <li>Uso de Macros</li>
-                                        <li>Creación de informes</li>
-                                        <li>Actualización de bases de datos</li>
-                                        <li>Lenguaje de programacion VBA</li>
-                                        <li>Generación de gráficos y visualizaciones</li>
-                                        <li>Limpieza de datos</li>
-                                    </ul>
-                                    </p>
-                                    <hr>
-                                    <h5>Nivel A2 Idioma Ingles</h5>
-                                    <p>
-                                    <ul>
-                                        <li><a href="https://drive.google.com/file/d/1byOI5idhgCPA2UoJk0AXVY4GxNfJs5yI/view?usp=sharing"
-                                                target="_blank">Instituto Superior Tecnologico Universitario Vida
-                                                Nueva"</a>
-                                        </li>
-                                    </ul>
-                                    </p>
-                                    <hr>
-                                    <h5>Auxliliar de Enfermeria</h5>
-                                    <p>
-                                    <ul>
-                                        <li>Instituto Superior Eugenio Espejo</li>
-                                    </ul>
-                                    </p>
-                                    <hr>
-                                    <h5>Flebotomista</h5>
-                                    <p>
-                                    <ul>
-                                        <li>Instituto Tecnológico Superior Consejo Provincial de Pichincha</li>
-                                    </ul>
-                                    </p>
-                                    <hr>
-                                    <h5>Universidad Tecnica Particular de Loja "UTPL"</h5>
-                                    <p>
-                                    <ul>
-                                        <li>Administracion de Recusos Humanos "Certificacion online</li>
-                                        <li>Fundamentos de Administracion "Certificacion online"</li>
-                                        <li>Cultura Financiera "Certificacion online"</li>
-                                        <li>Reclutamiento, Seleccion e Induccion de Personal "Certificacion online"</li>
-                                    </ul>
-                                    </p>
-                                    <hr>
-                                    <h5>Fundamentos de Contratacion Publica "Certificacion online"</h5>
-                                    <p>
-                                    <ul>
-                                        <li>SERCOP</li>
-                                    </ul>
-                                    </p>
-                                    <hr>
-                                    <h5>Ministerio de Salud Publica</h5>
-                                    <p>
-                                    <ul>
-                                        <li>Institucion Segura libre de Violencia contra las mujeres "Certificacion
-                                            online"
-                                        </li>
-                                        <li>Curso de Limpieza y desinfeccion Ambiental en los Establecimientos de Salud
-                                            "Certificacion online"</li>
-                                        <li>Curso Basico de Prevencion y Control de Infecciones Multiterrestres
-                                            "Certificacion online"</li>
-                                        <li>Higiene de Manos "Certificacion online"</li>
-                                        <li>Gestion Interna de los Residuos y Desechos Generados en Establecimientos de
-                                            Salud "Certificacion online"</li>
-                                    </ul>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          <article class="proyecto-box" tabindex="0" aria-labelledby="proyecto2-titulo" role="region">
+            <img src="img/proyecto2.gif" alt="Demostración del proyecto 2 con captura de la funcionalidad principal"
+              class="proyecto-img" />
+            <h4 id="proyecto2-titulo">Sistema de Control de Tareas</h4>
+            <p>Plataforma para gestionar tareas y asignaciones en equipo, integrando notificaciones y reportes
+              automáticos.</p>
+            <p><strong>Tecnologías:</strong> React, Node.js, MongoDB</p>
+            <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+          </article>
 
+        </div>
+      </section>
+    </div>
+  </div>
 
+  <script>
+    // Cambio de color principal dinámico
+    const colorPicker = document.getElementById('colorPicker');
+    colorPicker.addEventListener('input', e => {
+      document.documentElement.style.setProperty('--primary-color', e.target.value);
+      // Ajustar color oscuro (simplemente oscurecer un poco)
+      const darkColor = shadeColor(e.target.value, -30);
+      document.documentElement.style.setProperty('--primary-dark', darkColor);
+    });
 
-                    <h3>Proyectos</h3>
-                    <!-- TARJETA 1: texto izquierda, gif derecha -->
-                    <div class="contenedor_tarjeta_cv" style="animation-delay: 0.2s;">
-                        <div class="texto-proyectos">
-                            <h2 class="titulo">Auditor Automatizado de Lista de Espera Quirúrgica – Python
-                            </h2>
-                            <p>
-                                Desarrollé una herramienta en Python para auditar automáticamente la lista de espera
-                                quirúrgica institucional, cruzando datos del sistema Triage (intranet) con registros
-                                internos en Excel, con el fin de detectar inconsistencias críticas como pacientes ya
-                                operados que seguían activos en el sistema.
+    // Función para oscurecer color HEX
+    function shadeColor(color, percent) {
+      let R = parseInt(color.substring(1, 3), 16);
+      let G = parseInt(color.substring(3, 5), 16);
+      let B = parseInt(color.substring(5, 7), 16);
 
-                                🔹 Tecnologías: Python, Selenium, pandas, datetime, Excel
-                                🔹 Habilidades aplicadas: Automatización de procesos administrativos, análisis de datos,
-                                control de calidad, cumplimiento normativo, desarrollo de software modular y replicable.
+      R = parseInt(R * (100 + percent) / 100);
+      G = parseInt(G * (100 + percent) / 100);
+      B = parseInt(B * (100 + percent) / 100);
 
-                                📌 Resultados clave:
+      R = (R < 255) ? R : 255;
+      G = (G < 255) ? G : 255;
+      B = (B < 255) ? B : 255;
 
-                                Automatización del proceso de auditoría, reduciendo el tiempo de análisis de días a
-                                minutos, sin intervención humana.
+      const RR = (R.toString(16).length == 1) ? "0" + R.toString(16) : R.toString(16);
+      const GG = (G.toString(16).length == 1) ? "0" + G.toString(16) : G.toString(16);
+      const BB = (B.toString(16).length == 1) ? "0" + B.toString(16) : B.toString(16);
 
-                                Identificación precisa de errores administrativos que afectaban la calidad de los
-                                reportes institucionales y la equidad en la gestión de demanda quirúrgica.
+      return "#" + RR + GG + BB;
+    }
 
-                                Generación de informes segmentados por tipo de error, especialidad y estado del
-                                paciente, facilitando la toma de decisiones operativas y auditorías externas.
+    // Control de pestañas accesibles
+    const tabs = document.querySelectorAll('#cvTabs .nav-link');
+    const panes = document.querySelectorAll('.tab-pane');
 
-                                Mejora directa en la trazabilidad, el control interno y el cumplimiento de normativas
-                                sanitarias.
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Cambiar estado ARIA y clases
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        panes.forEach(p => p.classList.remove('active'));
 
-                                💼 Valor agregado para Talento Humano:
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
 
-                                Demuestra iniciativa para resolver problemas estructurales con herramientas tecnológicas
-                                de bajo costo.
+        const target = tab.dataset.tab;
+        const pane = document.getElementById(target);
+        if (pane) {
+          pane.classList.add('active');
+          pane.focus();
+        }
+      });
+    });
 
-                                Refleja capacidad para transformar procesos administrativos repetitivos en sistemas
-                                autónomos y confiables.
+    // Función imprimir con todas las secciones abiertas
+    const printBtn = document.getElementById('btnPrint');
 
-                                Evidencia dominio en automatización de flujos institucionales, incluso en entornos con
-                                autenticación y navegación web protegida.
+    printBtn.addEventListener('click', () => {
+      // Guardar pestaña activa
+      const activeTab = document.querySelector('#cvTabs .nav-link.active');
 
-                                Sistema adaptable y ejecutable por personal no técnico, lo que fomenta la transferencia
-                                de conocimiento y la sostenibilidad operativa.
+      // Mostrar todas las secciones
+      panes.forEach(pane => {
+        pane.classList.add('active');
+        pane.style.display = 'block';
+        pane.style.opacity = '1';
+        pane.style.transform = 'none';
+      });
 
+      // Ocultar menú y botón imprimir para impresión
+      document.getElementById('cvTabs').style.display = 'none';
+      printBtn.style.display = 'none';
 
-                            </p>
-                        </div>
-                        <div class="gif-proyecto">
-                            <img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2019/06/homer.gif"
-                                alt="GIF proyecto hospitalario">
-                        </div>
-                    </div>
+      // Esperar para renderizado
+      setTimeout(() => {
+        window.print();
 
-                    <hr class="separador-tarjetas" />
+        // Restaurar estado anterior
+        panes.forEach(pane => {
+          pane.classList.remove('active');
+          pane.style.display = '';
+          pane.style.opacity = '';
+          pane.style.transform = '';
+        });
 
-                    <!-- TARJETA 2: gif izquierda, texto derecha -->
-                    <div class="contenedor_tarjeta_cv" style="animation-delay: 0.5s;">
-                        <div class="gif-proyecto">
-                            <img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2019/06/homer.gif"
-                                alt="GIF proyecto inventario">
-                        </div>
-                        <div class="texto-proyectos">
-                            <h2 class="titulo">Sistema Automatizado de Análisis Gerencial en Excel</h2>
-                            <p>
-                                Diseñé e implementé una solución integral en Excel para el análisis automatizado de KPIs
-                                hospitalarios, utilizando fórmulas avanzadas, tablas dinámicas, validación de datos y
-                                visualización interactiva. El sistema permitió reducir en más del 90% el tiempo de
-                                generación de reportes, estandarizar el análisis entre áreas y mejorar la toma de
-                                decisiones estratégicas con datos confiables y actualizados.
-                            </p>
-                        </div>
-                    </div>
+        document.getElementById('cvTabs').style.display = '';
+        printBtn.style.display = '';
 
-                </div>
+        // Reactivar pestaña activa original
+        if (activeTab) {
+          tabs.forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          panes.forEach(p => p.classList.remove('active'));
 
-                <script src="./js/script.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-                    crossorigin="anonymous"></script>
+          activeTab.classList.add('active');
+          activeTab.setAttribute('aria-selected', 'true');
+          const target = activeTab.dataset.tab;
+          const pane = document.getElementById(target);
+          if (pane) pane.classList.add('active');
+        }
+      }, 100);
+    });
+  </script>
+  <!-- Bootstrap JS Bundle (Popper + Bootstrap) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
