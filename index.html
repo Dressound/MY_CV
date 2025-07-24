@@ -7,7 +7,7 @@
   <meta name="description"
     content="Currículum Vitae de Juan Pérez, desarrollador web especializado en automatización y desarrollo de soluciones eficientes." />
   <meta name="author" content="Juan Pérez" />
-  <title>Currículum Vitae - Juan Pérez</title>
+  <title>Currículum Vitae - Andres Ruilova</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
@@ -18,15 +18,6 @@
       --primary-dark: #072f6b;
       --text-light: #ffffff;
     }
-
-    .proyecto-box {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  padding: 2rem;
-  margin-bottom: 2rem;
-  transition: transform 0.2s ease;
-}
 
 .proyecto-box:hover {
   transform: translateY(-4px);
@@ -39,8 +30,11 @@
 
 .proyecto-img {
   max-width: 100%;
-  border-radius: 8px;
   border: 1px solid #ddd;
+  max-width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
 }
 
 .proyecto-header h4 {
@@ -80,18 +74,6 @@
   margin-top: 1.5rem;
   font-size: 0.9rem;
   color: #6c757d;
-}
-
-.btn-primary {
-  display: inline-block;
-  margin-top: 0.5rem;
-  background-color: #007bff;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
@@ -333,13 +315,6 @@
       outline: none;
     }
 
-    .proyecto-img {
-      max-width: 100%;
-      border-radius: 1rem;
-      margin-bottom: 1rem;
-      transition: transform 0.3s ease;
-    }
-
     .proyecto-img:hover,
     .proyecto-img:focus {
       transform: scale(1.05);
@@ -348,6 +323,8 @@
     }
 
     .btn-primary {
+      margin-top: 0.5rem;
+      color: white;
       background-color: var(--primary-color);
       border: none;
       font-weight: 600;
@@ -399,15 +376,6 @@
         background: white !important;
         color: black !important;
       }
-
-      /* Mostrar todas las secciones siempre */
-      .tab-pane {
-        display: block !important;
-        opacity: 1 !important;
-        transform: none !important;
-        page-break-inside: avoid;
-      }
-
       /* Ocultar menú de pestañas y botón imprimir */
       #cvTabs,
       #btnPrint,
@@ -441,6 +409,26 @@
         display: none !important;
       }
     }
+    #cvTabs {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-bottom: 1px solid #ccc;
+
+  #cvTabs.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+}
+  .nav-pills .nav-link:hover {
+    background-color: rgba(0, 50, 124, 0.1);
+    color: var(--primary-dark);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
   </style>
 </head>
 
@@ -1309,6 +1297,10 @@ Creo en el poder del aprendizaje constante y la innovación tecnológica como mo
         }
       }, 100);
     });
+      const navTabs = document.getElementById('cvTabs');
+  window.addEventListener('scroll', () => {
+    navTabs.classList.toggle('scrolled', window.scrollY > 60);
+  });
   </script>
   <!-- Bootstrap JS Bundle (Popper + Bootstrap) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
